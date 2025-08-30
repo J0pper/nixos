@@ -57,6 +57,7 @@
           ./disko-configs/tv-media-box.nix
           #inputs.disko.nixosModules.disko
         ];
+      };
     };
   };
 }
