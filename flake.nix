@@ -36,6 +36,20 @@
       };
       # work = nixpkgs.lib.nixosSystem
 
+      lenovo-y520 = nixpkgs.lib.nixosSystem {
+        specialArgs = { 
+          inherit inputs;
+        };
+        modules = [
+          ./hosts/lenovo-y520/configuration.nix
+          ./nixosModules/boot/grub2.nix
+          inputs.disko.nixosModules.disko
+          ./nixosModules/services/hyprland.nix
+          ./nixosModules/services/xdg.nix
+          ./nixosModules/services/sddm.nix
+        ];
+      };
+
       tv-media-box = nixpkgs.lib.nixosSystem {
         modules = [
           ./hosts/tv-media-box/configuration.nix
