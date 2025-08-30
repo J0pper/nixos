@@ -29,7 +29,7 @@
         modules = [
           ./hosts/personal/configuration.nix
           ./nixosModules/boot/grub2.nix
-          ./nixosModules/services/hyprland.nix
+          ./nixosModules/desktops/hyprland.nix
           ./nixosModules/services/xdg.nix
           ./nixosModules/services/sddm.nix
         ];
@@ -44,7 +44,7 @@
           ./hosts/lenovo-y520/configuration.nix
           ./nixosModules/boot/grub2.nix
           inputs.disko.nixosModules.disko
-          ./nixosModules/services/hyprland.nix
+          ./nixosModules/desktops/hyprland.nix
           ./nixosModules/services/xdg.nix
           ./nixosModules/services/sddm.nix
         ];
