@@ -42,7 +42,6 @@
         };
         modules = [
           ./hosts/lenovo-y520/configuration.nix
-          ./disko-configs/lenovo-y520.nix
           disko.nixosModules.disko
           ./nixosModules/boot-disko/grub2.nix
           ./nixosModules/desktops/hyprland.nix
