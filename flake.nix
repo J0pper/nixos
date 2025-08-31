@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     # nixpkgs.url = "github:NixOS/nixpkgs/release-24.05";
 
-    disko.url = "github:nix-community/disko";
+    disko.url = "github:nix-community/disko/latest";
     disko.inputs.nixpkgs.follows = "nixpkgs";
 
     hyprland.url = "github:hyprwm/Hyprland";
@@ -16,7 +16,7 @@
     };
   };
 
-  outputs = { nixpkgs, ... } @inputs:
+  outputs = { nixpkgs, disko, ... } @inputs:
   let
     system = "x86_64-linux";
   in 
@@ -42,8 +42,9 @@
         };
         modules = [
           ./hosts/lenovo-y520/configuration.nix
-          ./nixosModules/boot/grub2.nix
-          inputs.disko.nixosModules.disko
+          ./disko-configs/lenovo-y520.nix
+          disko.nixosModules.disko
+          ./nixosModules/boot-disko/grub2.nix
           ./nixosModules/desktops/hyprland.nix
           ./nixosModules/services/xdg.nix
           ./nixosModules/services/sddm.nix
