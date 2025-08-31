@@ -8,7 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./../../disko-configs/lenovo-y520.nix
     ];
 
 
