@@ -8,7 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../../disko-configs/lenovo-y520.nix
+      #../../disko-configs/lenovo-y520.nix
     ];
 
 
@@ -64,25 +64,27 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    pkgs.kitty
-    pkgs.fastfetch
-    pkgs.git
-    pkgs.stow
-    pkgs.starship
-    pkgs.font-awesome
-    pkgs.wofi
-    pkgs.waybar
-    pkgs.hyprpaper
-    pkgs.hypridle
-    pkgs.hyprlock
-    pkgs.hyprshot
+    kitty
+    fastfetch
+    git
+    stow
+    starship
+    font-awesome
+    wofi
+    waybar
+    hyprpaper
+    hypridle
+    hyprlock
+    hyprshot
     inputs.zen-browser.packages."${pkgs.system}".default
-    pkgs.tree
-    pkgs.discord
-    pkgs.catppuccin-sddm
-    pkgs.unzip
-    pkgs.nodejs_24
-    pkgs.feh
+    tree
+    discord
+    catppuccin-sddm
+    unzip
+    nodejs_24
+    feh
+    btop
+    powertop
   ];
 
   # If changing from nixpkgs 24.11 (or earlier) to 25.05 (or later) see this:
