@@ -16,6 +16,8 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
 
   security.polkit.enable = true;
 
