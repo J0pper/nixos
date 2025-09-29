@@ -10,8 +10,12 @@
       ./hardware-configuration.nix
     ];
 
+  services.udisks2 = {
+    enable = true;
+    mountOnMedia = true;
+  };
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "personal"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -20,6 +24,8 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
 
   security.polkit.enable = true;
 
@@ -76,26 +82,20 @@
     font-awesome
     wofi
     waybar
-    hyprpaper
-    hypridle
-    hyprlock
-    hyprshot
-    inputs.zen-browser.packages."${pkgs.system}".default
     tree
-    discord
     catppuccin-sddm
     unzip
-    nodejs_24
     feh
-    android-tools
-    heimdall
-    usbutils
+    #inputs.caelestia-shell.packages."${pkgs.system}".with-cli
+    btop-rocm
+    orca-slicer
   ];
 
   # If changing from nixpkgs 24.11 (or earlier) to 25.05 (or later) see this:
   # https://nixos.wiki/wiki/Fonts #Installing only specific nerdfonts
   fonts.packages = with pkgs; [
     nerd-fonts.hack
+    nerd-fonts.jetbrains-mono
     # (nerdfonts.override { fonts = [ "Hack" ]; })
   ];
 
@@ -104,6 +104,7 @@
     defaultEditor = true;
   };
 
+  #qt.enable = true;
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   programs.firefox.enable = true;
@@ -126,6 +127,12 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 3";
+    flake = "/home/jeppe/nixos"; # sets NH_OS_FLAKE variable for you
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
