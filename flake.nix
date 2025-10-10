@@ -35,11 +35,7 @@
         };
         modules = [
           ./hosts/personal/configuration.nix
-          ./nixosModules/boot/grub2.nix
-          ./nixosModules/desktops/hyprland.nix
-          ./nixosModules/services/xdg.nix
-          ./nixosModules/services/sddm.nix
-          ./nixosModules/programs/freecad.nix
+          ./nixosModules/defaults.nix
         ];
       };
       # work = nixpkgs.lib.nixosSystem
@@ -50,7 +46,6 @@
         };
         modules = [
           ./hosts/lenovo-y520/configuration.nix
-          disko.nixosModules.disko
           ./nixosModules/boot-disko/grub2.nix
           ./nixosModules/desktops/hyprland.nix
           ./nixosModules/services/xdg.nix
