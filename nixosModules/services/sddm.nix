@@ -4,7 +4,7 @@
     sddm = {
       enable = true;
       wayland.enable = true;
-      theme = "catppuccin-mocha";
+      theme = "catppuccin_mocha";
       package = pkgs.kdePackages.sddm;
       wayland.compositor = "weston";
     };
