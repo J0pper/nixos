@@ -16,8 +16,29 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  # Enable bluetooth
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        # Shows battery charge of connected devices on supported
+        # Bluetooth adapters. Defaults to 'false'.
+        Experimental = true;
+        # When enabled other devices can connect faster to us, however
+        # the tradeoff is increased power consumption. Defaults to
+        # 'false'.
+        FastConnectable = true;
+      };
+      Policy = {
+        # Enable all controllers when they are found. This includes
+        # adapters present on start as well as adapters that are plugged
+        # in later on. Defaults to 'true'.
+        AutoEnable = true;
+      };
+    };
+  };
+  services.blueman.enable = true;
+>>>>>>> e5f31f8 (Tried to fix missing SDDM them - didnt work)
 
   security.polkit.enable = true;
 
@@ -82,11 +103,16 @@
     tree
     discord
     catppuccin-sddm
+    # where-is-my-sddm-theme
     unzip
     nodejs_24
     feh
     btop
     powertop
+    loupe
+    brightnessctl
+    obsidian
+    blueman
   ];
 
   # If changing from nixpkgs 24.11 (or earlier) to 25.05 (or later) see this:
@@ -100,6 +126,7 @@
     enable = true;
     defaultEditor = true;
   };
+  programs.nix-ld.enable = true;
 
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -110,7 +137,28 @@
     zsh-autoenv.enable = true;
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
-};
+  };
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
+  services.xserver.videoDrivers = [ "nvidia" "modesetting" ];
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = true;
+    open = false;
+
+    prime = {
+      nvidiaBusId = "PCI:1:0:0";
+      intelBusId = "PCI:0:2:0";
+    };
+
+  };
+
+
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
