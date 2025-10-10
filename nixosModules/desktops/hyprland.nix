@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 {
   programs.hyprland = {
     enable = true; # enable hyprland
@@ -11,5 +11,5 @@
     hypridle
     hyprlock
     hyprshot
-  ]
+  ];
 }

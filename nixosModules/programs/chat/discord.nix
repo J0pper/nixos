@@ -1,6 +1,6 @@
-{config, pkgs, inputs, zen-browser}:
+{ pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
     discord
-  ]
+  ];
 }
