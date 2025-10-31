@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 { pkgs, inputs, ... }:
 {
   programs.river-classic = {
