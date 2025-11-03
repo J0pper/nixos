@@ -23,7 +23,6 @@
     catppuccin-sddm
     unzip
     feh
-    google-chrome
     piper
   ];
 }
