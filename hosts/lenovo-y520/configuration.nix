@@ -108,6 +108,25 @@
   # };
   #
 
+  # hardware.graphics = {
+  #   enable = true;
+  #   enable32Bit = true;
+  # };
+  #
+  # services.xserver.videoDrivers = [ "nvidia" "modesetting" ];
+  #
+  # hardware.nvidia = {
+  #   modesetting.enable = true;
+  #   powerManagement.enable = true;
+  #   open = false;
+  #
+  #   prime = {
+  #     nvidiaBusId = "PCI:1:0:0";
+  #     intelBusId = "PCI:0:2:0";
+  #   };
+  #
+  # };
+
 
 
   # Enable the OpenSSH daemon.
