@@ -46,11 +46,9 @@
         };
         modules = [
           ./hosts/lenovo-y520/configuration.nix
-          ./nixosModules/boot/grub2.nix
+          ./nixosModules/defaults.nix
           ./nixosModules/desktops/hyprland.nix
           ./nixosModules/desktops/river-classic.nix
-          ./nixosModules/services/xdg.nix
-          ./nixosModules/services/sddm.nix
         ];
       };
 

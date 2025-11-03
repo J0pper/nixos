@@ -38,7 +38,6 @@
     };
   };
   services.blueman.enable = true;
->>>>>>> e5f31f8 (Tried to fix missing SDDM them - didnt work)
 
   security.polkit.enable = true;
 
@@ -84,79 +83,30 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    kitty
-    fastfetch
-    git
-    stow
-    starship
-    font-awesome
-    wofi
-    waybar
-    hyprpaper
-    hypridle
-    hyprlock
-    hyprshot
-    inputs.zen-browser.packages."${pkgs.system}".default
-    tree
-    discord
-    catppuccin-sddm
-    # where-is-my-sddm-theme
-    unzip
-    nodejs_24
-    feh
-    btop
-    powertop
-    loupe
-    brightnessctl
-    obsidian
-    blueman
-  ];
-
-  # If changing from nixpkgs 24.11 (or earlier) to 25.05 (or later) see this:
-  # https://nixos.wiki/wiki/Fonts #Installing only specific nerdfonts
-  fonts.packages = with pkgs; [
-    nerd-fonts.hack
-    # (nerdfonts.override { fonts = [ "Hack" ]; })
-  ];
-
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
-  programs.nix-ld.enable = true;
-
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   programs.firefox.enable = true;
 
-  programs.zsh = {
-    enable = true;
-    zsh-autoenv.enable = true;
-    autosuggestions.enable = true;
-    syntaxHighlighting.enable = true;
-  };
 
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
-
-  services.xserver.videoDrivers = [ "nvidia" "modesetting" ];
-
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = true;
-    open = false;
-
-    prime = {
-      nvidiaBusId = "PCI:1:0:0";
-      intelBusId = "PCI:0:2:0";
-    };
-
-  };
+  # hardware.graphics = {
+  #   enable = true;
+  #   enable32Bit = true;
+  # };
+  #
+  # services.xserver.videoDrivers = [ "nvidia" "modesetting" ];
+  #
+  # hardware.nvidia = {
+  #   modesetting.enable = true;
+  #   powerManagement.enable = true;
+  #   open = false;
+  #
+  #   prime = {
+  #     nvidiaBusId = "PCI:1:0:0";
+  #     intelBusId = "PCI:0:2:0";
+  #   };
+  #
+  # };
+  #
 
 
 
