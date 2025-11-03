@@ -1,8 +1,9 @@
 { pkgs, lib, ... }:
 {
   imports = [
-    ./CAD/freecad.nix
-    ./browsers/zen.nix
+  ./CAD/freecad.nix
+  ./CAD/kicad.nix
+  ./browsers/zen.nix
   ./chat/discord.nix
   ./chat/vesktop.nix
   ./shells/zsh.nix
