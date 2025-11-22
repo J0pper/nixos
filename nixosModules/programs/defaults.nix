@@ -1,12 +1,15 @@
 { pkgs, lib, ... }:
 {
   imports = [
-    ./CAD/freecad.nix
-    ./browsers/zen.nix
+  ./CAD/freecad.nix
+  ./CAD/kicad.nix
+  ./browsers/zen.nix
   ./chat/discord.nix
   ./chat/vesktop.nix
+  ./music-players/spotify.nix
   ./shells/zsh.nix
   ./slicers/orca-slicer.nix
+  ./slicers/prusa-slicer.nix
   ./system-monitoring/btop.nix
   ./terminals/kitty.nix
   ./text-editor/nvim.nix
@@ -23,7 +26,10 @@
     catppuccin-sddm
     unzip
     feh
-    google-chrome
     piper
   ];
+
+  programs.nix-ld = {
+    enable = true;
+  };
 }
