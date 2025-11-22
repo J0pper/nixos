@@ -36,6 +36,7 @@
         modules = [
           ./hosts/personal/configuration.nix
           ./nixosModules/defaults.nix
+          ./nixosModules/desktops/river-classic.nix
         ];
       };
       # work = nixpkgs.lib.nixosSystem
