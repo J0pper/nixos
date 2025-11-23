@@ -11,8 +11,5 @@
 
   programs.virt-manager.enable = true;
 
-  users.users.myuser = {
-    extraGroups = [ "libvirtd" ];
-  };
-
+  users.groups.libvirtd.members = [ "jeppe" ];
 }

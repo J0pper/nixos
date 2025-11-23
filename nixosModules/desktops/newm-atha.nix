@@ -1,6 +1,26 @@
-{ pkgs, inputs, ... }:
+{ config, pkgs, inputs, ... }:
+
 {
-  environment.systemPackages = with pkgs; [
-    inputs.newm-atha.packages."${pkgs.system}".new-atha
+  # nixpkgs.overlays = [
+  #   (final: prev: {
+  #     newm-next = prev.python3Packages.buildPythonApplication rec {
+  #       pname = "newm-next";
+  #       inherit (inputs.newm-next.packages.${pkgs.system}.newm-next) version src;
+  #
+  #       # Fix for newer nixpkgs Python rules
+  #       pyproject = true;
+  #       build-system = [ prev.python3Packages.setuptools ];
+  #
+  #       propagatedBuildInputs =
+  #         inputs.newm-next.packages.${pkgs.system}.newm-next.propagatedBuildInputs;
+  #
+  #       doCheck = false;
+  #     };
+  #   })
+  # ];
+
+  environment.systemPackages = [
+    inputs.newm-next.packages.${pkgs.system}.newm-next
   ];
 }
+
