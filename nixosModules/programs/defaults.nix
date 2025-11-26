@@ -2,7 +2,7 @@
 {
   imports = [
   ./CAD/freecad.nix
-  ./CAD/kicad.nix
+  # ./CAD/kicad.nix
   ./browsers/zen.nix
   ./chat/discord.nix
   ./chat/vesktop.nix
