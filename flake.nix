@@ -27,15 +27,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     
-    # newm-atha.url = "sourcehut:~atha/newm-atha";
-    # newm-atha.inputs.nixpkgs.follows = "nixpkgs";
-    # newm-next = {
-    #   url = "github:newm-next/newm-next";
-    #   inputs.nixpkgs.follows = "nixpkgs-older";
-    #   # inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
-    # nixpkgs-older.url = "github:nixos/nixpkgs/3e313808bd2e0a0669430787fb22e43b2f4bf8bf";
+    newm-atha.url = "sourcehut:~atha/newm-atha";
+    newm-atha.inputs.nixpkgs.follows = "nixpkgs";
+    newm-next = {
+      url = "github:newm-next/newm-next";
+      inputs.nixpkgs.follows = "nixpkgs-older";
+      # inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixpkgs-older.url = "github:nixos/nixpkgs/3e313808bd2e0a0669430787fb22e43b2f4bf8bf";
   };
 
   outputs = { nixpkgs, ... } @inputs:
@@ -52,7 +51,7 @@
           ./hosts/personal/configuration.nix
           ./nixosModules/defaults.nix
           ./nixosModules/desktops/river-classic.nix
-          # ./nixosModules/desktops/newm-atha.nix
+          ./nixosModules/desktops/newm-atha.nix
           ./nixosModules/virtualization.nix
         ];
       };
@@ -64,10 +63,10 @@
         };
         modules = [
           ./hosts/lenovo-y520/configuration.nix
-          ./nixosModules/boot/grub2.nix
-          ./nixosModules/desktops/hyprland.nix
-          ./nixosModules/services/xdg.nix
-          ./nixosModules/services/sddm.nix
+          ./nixosModules/defaults.nix
+          ./nixosModules/desktops/river-classic.nix
+          ./nixosModules/desktops/newm-atha.nix
+          ./nixosModules/virtualization.nix
         ];
       };
 
