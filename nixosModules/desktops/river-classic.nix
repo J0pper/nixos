@@ -6,9 +6,11 @@
   };
 
   environment.systemPackages = with pkgs; [
+    wayland-utils
+    way-displays
     waybar
     rofi
-    way-displays
+    kanshi
     inputs.awww.packages.${pkgs.system}.awww
   ];
 }
