@@ -20,6 +20,7 @@
   # ];
 
   environment.systemPackages = [
+    pkgs.alacritty
     inputs.newm-next.packages.${pkgs.system}.newm-next
   ];
 }
