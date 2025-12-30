@@ -7,11 +7,12 @@
   ./chat/discord.nix
   ./chat/vesktop.nix
   ./shells/zsh.nix
-  ./slicers/orca-slicer.nix
+  ./slicers/prusa-slicer.nix
   ./system-monitoring/btop.nix
-  ./terminals/kitty.nix
+  ./terminals/foot.nix
   ./text-editor/nvim.nix
   ./text-editor/obsidian.nix
+  ./music-players/spotify.nix
   ];
 
   environment.systemPackages = with pkgs; [
@@ -25,7 +26,17 @@
     unzip
     feh
     piper
+    btop
+    powertop
   ];
+
+  programs.nix-ld = {
+    enable = true;
+  };
+
+  programs.yazi = {
+    enable = true;
+  };
 
   programs.nh = {
     enable = true;
@@ -33,6 +44,4 @@
     clean.extraArgs = "--keep-since 4d --keep 3";
     flake = "/home/jeppe/nixos"; # sets NH_OS_FLAKE variable for you
   };
-
-  programs.nix-ld.enable = true;
 }

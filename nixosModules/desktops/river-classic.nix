@@ -1,12 +1,16 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   programs.river-classic = {
     enable = true; # enable river
   };
 
   environment.systemPackages = with pkgs; [
+    wayland-utils
+    way-displays
+    wlr-randr
     waybar
     rofi
-    satty
+    kanshi
+    inputs.awww.packages.${pkgs.system}.awww
   ];
 }

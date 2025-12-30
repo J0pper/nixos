@@ -16,8 +16,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  # Enable bluetooth
-  hardware.bluetooth.enable = true;
 
   security.polkit.enable = true;
 
@@ -66,27 +64,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    kitty
-    fastfetch
-    git
-    stow
-    starship
-    font-awesome
-    wofi
-    waybar
-    hyprpaper
-    hypridle
-    hyprlock
-    hyprshot
-    inputs.zen-browser.packages."${pkgs.system}".default
-    tree
-    discord
-    catppuccin-sddm
-    unzip
-    nodejs_24
-    feh
-    btop
-    powertop
   ];
 
   # If changing from nixpkgs 24.11 (or earlier) to 25.05 (or later) see this:
@@ -96,10 +73,6 @@
     # (nerdfonts.override { fonts = [ "Hack" ]; })
   ];
 
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
 
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
