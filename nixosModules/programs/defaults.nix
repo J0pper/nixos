@@ -24,9 +24,16 @@
     font-awesome
     tree
     catppuccin-sddm
+    zip
     unzip
     feh
     piper
+    playerctl
+    ripgrep
+    obs-studio
+    kdePackages.dolphin
+    printrun
+    pamixer
   ];
 
   programs.nix-ld = {
@@ -43,5 +50,7 @@
     clean.extraArgs = "--keep-since 4d --keep 3";
     flake = "/home/jeppe/nixos"; # sets NH_OS_FLAKE variable for you
   };
+
+  programs.steam.enable = true;
 }
 
