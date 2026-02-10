@@ -51,7 +51,7 @@
   users.users.jeppe = {
     isNormalUser = true;
     description = "Jeppe Vad Andersen";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" ];
     packages = with pkgs; [];
     shell = pkgs.zsh;
   };

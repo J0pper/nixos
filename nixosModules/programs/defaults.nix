@@ -28,6 +28,11 @@
     piper
     btop
     powertop
+    brightnessctl
+    shotman
+    slurp
+    printrun
+    bun
   ];
 
   programs.nix-ld = {
@@ -44,4 +49,7 @@
     clean.extraArgs = "--keep-since 4d --keep 3";
     flake = "/home/jeppe/nixos"; # sets NH_OS_FLAKE variable for you
   };
+
+  programs.steam.enable = true;
+
 }
