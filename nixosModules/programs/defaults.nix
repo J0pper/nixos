@@ -2,6 +2,7 @@
 {
   imports = [
   ./CAD/freecad.nix
+  ./CAD/openscad.nix
   # ./CAD/kicad.nix
   ./browsers/zen.nix
   ./chat/discord.nix
@@ -34,6 +35,11 @@
     kdePackages.dolphin
     printrun
     pamixer
+    shotman
+    grim
+    libreoffice-qt-fresh
+    tor-browser
+    eddie
   ];
 
   programs.nix-ld = {
@@ -52,5 +58,7 @@
   };
 
   programs.steam.enable = true;
+  programs.openvpn3.enable = true;
+
 }
 
