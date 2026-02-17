@@ -50,6 +50,6 @@
     flake = "/home/jeppe/nixos"; # sets NH_OS_FLAKE variable for you
   };
 
-  programs.steam.enable = true;
+  # programs.steam.enable = true;
 
 }
