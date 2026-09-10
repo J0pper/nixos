@@ -6,5 +6,5 @@
     ./programs/defaults.nix
     ./fonts.nix
   ];
-
+  hardware.enableAllFirmware = true;
 }
