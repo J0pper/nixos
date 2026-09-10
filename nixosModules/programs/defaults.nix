@@ -5,6 +5,7 @@
   ./CAD/openscad.nix
   # ./CAD/kicad.nix
   ./browsers/zen.nix
+  ./browsers/chrome.nix
   ./chat/discord.nix
   ./chat/vesktop.nix
   ./music-players/spotify.nix
@@ -13,6 +14,7 @@
   ./slicers/prusa-slicer.nix
   ./system-monitoring/btop.nix
   ./terminals/kitty.nix
+  ./terminals/foot.nix
   ./text-editor/nvim.nix
   ./text-editor/obsidian.nix
   ];
@@ -39,7 +41,23 @@
     grim
     libreoffice-qt-fresh
     tor-browser
-    eddie
+    lunar-client
+    postman
+    nodejs_26
+    jless
+    prismlauncher
+    cargo
+    rustc
+    rustup
+    fstl
+    jq
+    wireguard-tools
+    qbittorrent
+    fzf
+    pavucontrol
+    python315
+    wdisplays
+    wlr-randr
   ];
 
   programs.nix-ld = {
