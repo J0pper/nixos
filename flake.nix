@@ -11,7 +11,7 @@
       url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     caelestia-cli = {
       url = "github:caelestia-dots/cli";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,7 +26,7 @@
       url = "git+https://codeberg.org/LGFae/awww";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     newm-atha.url = "sourcehut:~atha/newm-atha";
     newm-atha.inputs.nixpkgs.follows = "nixpkgs";
     newm-next = {
@@ -39,7 +39,7 @@
 
   outputs = { nixpkgs, ... } @inputs:
   let
-    system = "x86_64-linux";
+    stdenv.hostPlatform.system = "x86_64-linux";
   in 
   {
     nixosConfigurations = {
@@ -56,16 +56,17 @@
       };
       # work = nixpkgs.lib.nixosSystem
 
-      lenovo-y520 = nixpkgs.lib.nixosSystem {
+      dell-precision3530 = nixpkgs.lib.nixosSystem {
         specialArgs = { 
           inherit inputs;
         };
         modules = [
-          ./hosts/lenovo-y520/configuration.nix
+          ./hosts/dell-precision3530/configuration.nix
           ./nixosModules/defaults.nix
-          ./nixosModules/desktops/river-classic.nix
-          ./nixosModules/desktops/newm-atha.nix
-          ./nixosModules/virtualization.nix
+          # ./nixosModules/desktops/hyprland.nix
+          # ./nixosModules/desktops/river-classic.nix
+          # ./nixosModules/desktops/newm-atha.nix
+          # ./nixosModules/virtualization.nix
         ];
       };
 

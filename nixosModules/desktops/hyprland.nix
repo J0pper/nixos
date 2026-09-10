@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+  imports = [
+    ./caelestia.nix
+  ];
+
   programs.hyprland = {
     enable = true; # enable hyprland
     xwayland.enable = true;

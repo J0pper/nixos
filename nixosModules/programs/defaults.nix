@@ -6,17 +6,20 @@
   # ./CAD/kicad.nix
   ./browsers/zen.nix
   ./browsers/chrome.nix
+  ./browsers/zen.nix
+  ./browsers/tor.nix
   ./chat/discord.nix
   ./chat/vesktop.nix
   ./music-players/spotify.nix
   ./shells/zsh.nix
-  ./slicers/orca-slicer.nix
   ./slicers/prusa-slicer.nix
   ./system-monitoring/btop.nix
   ./terminals/kitty.nix
   ./terminals/foot.nix
   ./text-editor/nvim.nix
   ./text-editor/obsidian.nix
+  ./music-players/spotify.nix
+  ./music-players/rmpc.nix
   ];
 
   environment.systemPackages = with pkgs; [
@@ -40,8 +43,6 @@
     shotman
     grim
     libreoffice-qt-fresh
-    tor-browser
-    lunar-client
     postman
     nodejs_26
     jless
@@ -52,12 +53,29 @@
     fstl
     jq
     wireguard-tools
-    qbittorrent
     fzf
     pavucontrol
     python315
     wdisplays
     wlr-randr
+    powertop
+    brightnessctl
+    slurp
+    bun
+    # auto-cpufreq
+    godotPackages_4_3.godot
+    ani-cli
+    qbittorrent-enhanced
+    pwvucontrol
+    wireplumber
+    stoat-desktop
+    ffmpeg
+    speedcrunch
+    qalculate-qt
+    mdbook
+    docker
+    docker-compose
+    postgresql
   ];
 
   programs.nix-ld = {
@@ -77,6 +95,5 @@
 
   programs.steam.enable = true;
   programs.openvpn3.enable = true;
-
 }
 

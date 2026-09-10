@@ -7,6 +7,7 @@
   environment.systemPackages = with pkgs; [
     wayland-utils
     way-displays
+    wlr-randr
     waybar
     rofi
     kanshi

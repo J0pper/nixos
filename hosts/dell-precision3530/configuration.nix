@@ -12,32 +12,12 @@
     ];
 
 
-  networking.hostName = "lenovo-y520"; # Define your hostname.
+  networking.hostName = "dell-precision3530"; # Define your hostname.
 
   # Enable networking
   networking.networkmanager.enable = true;
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-    settings = {
-      General = {
-        # Shows battery charge of connected devices on supported
-        # Bluetooth adapters. Defaults to 'false'.
-        Experimental = true;
-        # When enabled other devices can connect faster to us, however
-        # the tradeoff is increased power consumption. Defaults to
-        # 'false'.
-        FastConnectable = true;
-      };
-      Policy = {
-        # Enable all controllers when they are found. This includes
-        # adapters present on start as well as adapters that are plugged
-        # in later on. Defaults to 'true'.
-        AutoEnable = true;
-      };
-    };
-  };
-  services.blueman.enable = true;
+
+  networking.firewall.allowedTCPPorts = [ 3000 ];
 
   security.polkit.enable = true;
 
@@ -73,7 +53,7 @@
   users.users.jeppe = {
     isNormalUser = true;
     description = "Jeppe Vad Andersen";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "libvirtd" "docker" ];
     packages = with pkgs; [];
     shell = pkgs.zsh;
   };
@@ -83,54 +63,36 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+  ];
+
+  # If changing from nixpkgs 24.11 (or earlier) to 25.05 (or later) see this:
+  # https://nixos.wiki/wiki/Fonts #Installing only specific nerdfonts
+  fonts.packages = with pkgs; [
+    nerd-fonts.hack
+    # (nerdfonts.override { fonts = [ "Hack" ]; })
+  ];
+
+
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   programs.firefox.enable = true;
 
-
-  # hardware.graphics = {
-  #   enable = true;
-  #   enable32Bit = true;
-  # };
-  #
-  # services.xserver.videoDrivers = [ "nvidia" "modesetting" ];
-  #
-  # hardware.nvidia = {
-  #   modesetting.enable = true;
-  #   powerManagement.enable = true;
-  #   open = false;
-  #
-  #   prime = {
-  #     nvidiaBusId = "PCI:1:0:0";
-  #     intelBusId = "PCI:0:2:0";
-  #   };
-  #
-  # };
-  #
-
-  # hardware.graphics = {
-  #   enable = true;
-  #   enable32Bit = true;
-  # };
-  #
-  # services.xserver.videoDrivers = [ "nvidia" "modesetting" ];
-  #
-  # hardware.nvidia = {
-  #   modesetting.enable = true;
-  #   powerManagement.enable = true;
-  #   open = false;
-  #
-  #   prime = {
-  #     nvidiaBusId = "PCI:1:0:0";
-  #     intelBusId = "PCI:0:2:0";
-  #   };
-  #
-  # };
-
-
+  programs.zsh = {
+    enable = true;
+    zsh-autoenv.enable = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
+  };
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-38.8.4"
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
