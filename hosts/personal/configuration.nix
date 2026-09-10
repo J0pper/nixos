@@ -20,6 +20,10 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_DK.UTF-8";
 
+  environment.variables = {
+    XKB_DEFAULT_LAYOUT = "dk";
+  };
+
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "da_DK.UTF-8";
     LC_IDENTIFICATION = "da_DK.UTF-8";
