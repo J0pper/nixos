@@ -2,8 +2,9 @@
 {
   imports = [
   ./CAD/freecad.nix
-  ./CAD/kicad.nix
+  ./CAD/openscad.nix
   ./browsers/zen.nix
+  ./browsers/tor.nix
   ./chat/discord.nix
   ./chat/vesktop.nix
   ./shells/zsh.nix
@@ -13,6 +14,7 @@
   ./text-editor/nvim.nix
   ./text-editor/obsidian.nix
   ./music-players/spotify.nix
+  ./music-players/rmpc.nix
   ];
 
   environment.systemPackages = with pkgs; [
@@ -26,13 +28,37 @@
     unzip
     feh
     piper
-    btop
     powertop
     brightnessctl
     shotman
     slurp
     printrun
     bun
+    # auto-cpufreq
+    nodejs_26
+    godotPackages_4_3.godot
+    ani-cli
+    qbittorrent-enhanced
+    cargo
+    pwvucontrol
+    wireplumber
+    ripgrep
+    stoat-desktop
+    ffmpeg
+    jq
+    postman
+    jless
+    playerctl
+    speedcrunch
+    qalculate-qt
+    libreoffice
+    python315
+    mdbook
+    fstl
+    prismlauncher
+    docker
+    docker-compose
+    postgresql
   ];
 
   programs.nix-ld = {
