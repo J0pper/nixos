@@ -1,10 +1,10 @@
 { pkgs, ... }:
 {
-  environment.pathsToLink = [ "share/foot" ]
+  environment.pathsToLink = [ "share/foot" ];
 
-  packages.foot = {
+  programs.foot = {
     enable = true;
-    theme = "catppuccin-latte"
+    theme = "catppuccin-latte";
     settings =
     {
       main = {
@@ -13,7 +13,6 @@
       scrollback = {
         lines = 100000;
       };
-    }
-
-  }
+    };
+  };
 }
