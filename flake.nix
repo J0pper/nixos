@@ -61,9 +61,9 @@
         modules = [
           ./hosts/dell-precision3530/configuration.nix
           ./nixosModules/defaults.nix
-          ./nixosModules/desktops/hyprland.nix
+          # ./nixosModules/desktops/hyprland.nix
           ./nixosModules/desktops/river-classic.nix
-          ./nixosModules/desktops/newm-atha.nix
+          # ./nixosModules/desktops/newm-atha.nix
           ./nixosModules/virtualization.nix
         ];
       };
