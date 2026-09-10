@@ -17,6 +17,8 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  networking.firewall.allowedTCPPorts = [ 3000 ];
+
   security.polkit.enable = true;
 
   # Set your time zone.
@@ -51,7 +53,7 @@
   users.users.jeppe = {
     isNormalUser = true;
     description = "Jeppe Vad Andersen";
-    extraGroups = [ "networkmanager" "wheel" "dialout" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "libvirtd" "docker" ];
     packages = with pkgs; [];
     shell = pkgs.zsh;
   };
@@ -83,10 +85,14 @@
     zsh-autoenv.enable = true;
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
-};
+  };
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-38.8.4"
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
