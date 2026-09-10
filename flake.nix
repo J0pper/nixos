@@ -50,8 +50,7 @@
         modules = [
           ./hosts/personal/configuration.nix
           ./nixosModules/defaults.nix
-          ./nixosModules/desktops/river-classic.nix
-          ./nixosModules/desktops/newm-atha.nix
+          # ./nixosModules/desktops/newm-atha.nix
           ./nixosModules/virtualization.nix
         ];
       };
