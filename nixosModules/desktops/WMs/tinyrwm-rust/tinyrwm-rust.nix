@@ -4,23 +4,22 @@
   rustPlatform,
 }:
 
-rustPlatform.buildRustPackage (finalAttrs: {
-  name = "tinyrwm-rust";
+rustPlatform.buildRustPackage rec {
+  pname = "tinyrwm-rust";
+  version = "0.1.0";
 
-  src = fetchFromCodeberg {
+  src = "${fetchFromCodeberg {
     owner = "river";
     repo = "tinyrwm";
-    rev = "d1daddd8c9";
+    rev = "v${version}";
     hash = "sha256-MNzIohxFhva319q9qNU5nDnGjpY7eG/MLn4hg1u8bU0=";
-  };
+  }}/rust/";
 
   cargoLock = {
     lockFile = ./Cargo.lock;
-    outputHashes = {
-    };
   };
 
   postPatch = ''
     ln -s ${./Cargo.lock} Cargo.lock
   '';
-})
+}
