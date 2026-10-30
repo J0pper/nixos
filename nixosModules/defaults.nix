@@ -4,6 +4,7 @@
     ./desktops/river.nix
     ./services/defaults.nix
     ./boot/grub2.nix
+    ./programs/shells/zsh.nix
     ./programs/defaults.nix
     ./fonts.nix
   ];

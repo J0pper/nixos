@@ -2,11 +2,10 @@
 {
   imports = [
   ./CAD/freecad.nix
-  ./CAD/openscad.nix
+  # ./CAD/openscad.nix
   # ./CAD/kicad.nix
   ./browsers/zen.nix
   ./browsers/chrome.nix
-  ./browsers/zen.nix
   ./browsers/tor.nix
   ./chat/discord.nix
   ./chat/vesktop.nix
@@ -14,11 +13,9 @@
   ./shells/zsh.nix
   ./slicers/prusa-slicer.nix
   ./system-monitoring/btop.nix
-  ./terminals/kitty.nix
   ./terminals/foot.nix
   ./text-editor/nvim.nix
   ./text-editor/obsidian.nix
-  ./music-players/spotify.nix
   ./music-players/rmpc.nix
   ];
 
@@ -27,9 +24,7 @@
     git
     stow
     starship
-    font-awesome
     tree
-    catppuccin-sddm
     zip
     unzip
     feh
@@ -37,12 +32,10 @@
     playerctl
     ripgrep
     obs-studio
-    kdePackages.dolphin
-    printrun
     pamixer
     shotman
     grim
-    libreoffice-qt-fresh
+    libreoffice-qt-stable
     postman
     nodejs_26
     jless
@@ -62,8 +55,7 @@
     brightnessctl
     slurp
     bun
-    # auto-cpufreq
-    godotPackages_4_3.godot
+    auto-cpufreq
     ani-cli
     qbittorrent-enhanced
     pwvucontrol
@@ -76,6 +68,7 @@
     docker
     docker-compose
     postgresql
+    fuzzel
   ];
 
   programs.nix-ld = {
@@ -92,8 +85,9 @@
     clean.extraArgs = "--keep-since 4d --keep 3";
     flake = "/home/jeppe/nixos"; # sets NH_OS_FLAKE variable for you
   };
-
-  programs.steam.enable = true;
-  programs.openvpn3.enable = true;
+  
+  programs.java.enable = true;
+  # programs.steam.enable = true;
+  # programs.openvpn3.enable = true;
 }
 

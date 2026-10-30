@@ -7,8 +7,7 @@ in
   environment.systemPackages = with pkgs; [
     river
     argen
-    tinyrwm-rust
-    tiny
+    # tinyrwm-rust
     wayland-utils
     way-displays
     waybar

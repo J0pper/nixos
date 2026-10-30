@@ -27,6 +27,10 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_DK.UTF-8";
 
+  environment.variables = {
+    XKB_DEFAULT_LAYOUT = "dk";
+  };
+
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "da_DK.UTF-8";
     LC_IDENTIFICATION = "da_DK.UTF-8";
@@ -44,7 +48,6 @@
     layout = "dk";
     variant = "";
   };
-
 
   # Configure console keymap
   console.keyMap = "dk-latin1";
@@ -80,12 +83,6 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   programs.firefox.enable = true;
 
-  programs.zsh = {
-    enable = true;
-    zsh-autoenv.enable = true;
-    autosuggestions.enable = true;
-    syntaxHighlighting.enable = true;
-  };
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;

@@ -5,20 +5,20 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     # nixpkgs.url = "github:NixOS/nixpkgs/release-25.05";
 
-    hyprland.url = "github:hyprwm/Hyprland";
-
-    caelestia-shell = {
-      url = "github:caelestia-dots/shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    caelestia-cli = {
-      url = "github:caelestia-dots/cli";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # hyprland.url = "github:hyprwm/Hyprland";
+    #
+    # caelestia-shell = {
+    #   url = "github:caelestia-dots/shell";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    #
+    # caelestia-cli = {
+    #   url = "github:caelestia-dots/cli";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     zen-browser = {
-      url = "github:youwen5/zen-browser-flake";
+      url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -27,14 +27,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    newm-atha.url = "sourcehut:~atha/newm-atha";
-    newm-atha.inputs.nixpkgs.follows = "nixpkgs";
-    newm-next = {
-      url = "github:newm-next/newm-next";
-      inputs.nixpkgs.follows = "nixpkgs-older";
-      # inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nixpkgs-older.url = "github:nixos/nixpkgs/3e313808bd2e0a0669430787fb22e43b2f4bf8bf";
+    # newm-atha.url = "sourcehut:~atha/newm-atha";
+    # newm-atha.inputs.nixpkgs.follows = "nixpkgs";
+    # newm-next = {
+    #   url = "github:newm-next/newm-next";
+    #   inputs.nixpkgs.follows = "nixpkgs-older";
+    #   # inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    # nixpkgs-older.url = "github:nixos/nixpkgs/3e313808bd2e0a0669430787fb22e43b2f4bf8bf";
   };
 
   outputs = { nixpkgs, ... } @inputs:
@@ -66,7 +66,7 @@
           # ./nixosModules/desktops/hyprland.nix
           # ./nixosModules/desktops/river-classic.nix
           # ./nixosModules/desktops/newm-atha.nix
-          # ./nixosModules/virtualization.nix
+          ./nixosModules/virtualization.nix
         ];
       };
 
